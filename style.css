@@ -1,0 +1,163 @@
+/* Position Property */
+
+.parent-container {
+    background-color: beige;
+    width: 75vw;
+    height: 75vw;
+    /* increase height to see scroll effects */
+    border: 2px solid black;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    position:relative;
+    /* causes Absolute container to position inside parent container */
+}
+
+.child {
+    padding: 25px;
+}
+
+.child1 {
+    border: 2px solid red;
+    background-color: red;
+    right: 25px;
+    /* no effect on static */
+}
+
+.child2 {
+    border: 2px solid blueviolet;
+    background-color: blueviolet;
+    position:relative;
+    /* nothing -- just like static */
+    left: 15px;
+    /* moves 15px in relation to it's static position
+    if you set to 0 it goes back to where it was */
+}
+
+.child3 {
+    border: 2px solid green;
+    background-color: green;
+    
+    position: absolute;
+    /*  removed from the natural flow of the document*/
+    top: 0;
+    left: 0;
+    /* moves it to the upper left corer of viewport (body)*/
+    /* caused by parent container being static */
+}
+
+.child4 {
+    border: 2px solid teal;
+    background-color: teal;
+    
+    position: fixed;
+    /* keeps element in the same place, even when scrolling */
+    top: 125;
+    left: 100px;
+    right: 100px;
+
+}
+
+.child5 {
+border: 2px solid grey;
+background-color: grey;
+
+position: sticky;
+/* like relative */
+top: 20px;
+/* This is where it will stop once we scroll */
+}
+
+/* 
+    CSS Position Property 
+
+    ? Static
+        * Default
+        * Positioned in relation to elements
+        * Top, bottom, left, and right
+
+    ? Relavtive
+        * Just like static
+        * Can be changed using top, bottom, left, right, z-index
+        * Values are relative to its original static postion
+        ! DON'T USE IT! Breaks from the flow!
+
+    ? Absolute
+    * Removes element form the flow
+    * Positions it relative to parent container
+    * If parent is static, it will move outside of parent container
+    * If parent is relative, it will move within the parent container
+    * Positioning defined by top, bottom, left, right, z-index
+
+    ? Fixed
+    * Like absolute
+    * Positioned to viewport
+    * Doesn't move when scrolling
+    * Position defined by top, bottom, left, right, z-index
+
+    ? Sticky
+    * Mix of relative and fixed
+    * Relative to the flow
+    * Position definition used for when you start scrolling
+    * Stays fixed when scrolling; relative when stationary
+
+*/
+
+/* Display Property */
+
+/* 
+    ? Display Property
+
+    * Treats an element as block or inline
+    * Blocks are created top to bottom
+    * Inline are positioned side-by-side
+*/
+
+.display-container {
+    margin-top: 15px;
+}
+
+.block-container {
+    border: 2px solid black;
+    margin: 5px;
+}
+
+.inline-element {
+    margin: 5px;
+    display: block;
+    /* Turns buttons into block and aligns in a column */
+}
+
+.inline-block {
+    border: 2px solid black;
+    margin: 5px;
+
+    /* Initially a block */
+    /* display: inline; */
+    /* Acts like an inline */
+
+    display: inline-block;
+    width: 125px;
+    /* allows us to set the width and height of inline */
+}
+
+/* This is how we used to specify column/design */
+
+/* Float property */
+
+.float-container {
+    margin-top: 2em;
+    border: 2px solid blue;
+    height: 20vw;
+}
+
+.float-box {
+    margin: 5px;
+    border: 2px solid orange;
+    background-color: orange;
+    width: 50px;
+    height: 50px;
+
+    float: right;
+    /* Shifts elements from left to right */
+}
